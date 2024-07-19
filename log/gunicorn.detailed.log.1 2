@@ -1,0 +1,14 @@
+[2024-07-16 01:49:49,976] ERROR log_exception() L1449 Exception on /user [POST] - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/flask/app.py L1449
+Traceback (most recent call last):
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/flask/app.py", line 1520, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/flask/app.py", line 1539, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/flask/app.py", line 1695, in make_response
+    raise TypeError(
+TypeError: The view function for 'add_registro' did not return a valid response. The function either returned None or ended without a return statement.
+[2024-07-16 01:49:49,981] INFO _log() L224  127.0.0.1 - - [16/Jul/2024 01:49:49] "[35m[1mPOST /user HTTP/1.1[0m" 500 - - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 01:50:12,799] INFO _log() L224   * Detected change in '/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/app.py', reloading - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 01:51:41,528] INFO _log() L224   * Detected change in '/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/app.py', reloading - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 

@@ -1,0 +1,76 @@
+[2024-07-16 23:32:51,160] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:32:53,296] INFO _log() L224  127.0.0.1 - - [16/Jul/2024 23:32:53] "GET /user?document=12345678900 HTTP/1.1" 200 - - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:32:59,210] INFO _log() L224  127.0.0.1 - - [16/Jul/2024 23:32:59] "GET /user?document=12345678900 HTTP/1.1" 200 - - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:33:46,211] INFO _log() L224   * Detected change in '/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/app.py', reloading - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:33:46,307] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:33:47,692] ERROR log_exception() L1449 Exception on /user [GET] - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/flask/app.py L1449
+Traceback (most recent call last):
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: users._balance
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/flask/app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/flask/app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/flask/app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/flask_openapi3/scaffold.py", line 109, in wrapper
+    resp = _do_wrapper(
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/flask_openapi3/do_wrapper.py", line 135, in _do_wrapper
+    response = func(**request_kwargs)
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/app.py", line 74, in get_registro
+    user = session.query(User).filter(User.document == document).first()
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2823, in first
+    return self.limit(1)._iter().first()
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2907, in _iter
+    result = self.session.execute(
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1712, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 333, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 208, in raise_
+    raise exception
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: users._balance
+[SQL: SELECT users.id_user AS users_id_user, users.first_name AS users_first_name, users.last_name AS users_last_name, users.document AS users_document, users._balance AS users__balance, users._registration_date AS users__registration_date 
+FROM users 
+WHERE users.document = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('12345678900', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2024-07-16 23:33:47,704] INFO _log() L224  127.0.0.1 - - [16/Jul/2024 23:33:47] "[35m[1mGET /user?document=12345678900 HTTP/1.1[0m" 500 - - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:35:49,247] INFO _log() L224   * Detected change in '/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/app.py', reloading - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:35:49,335] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:36:57,547] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:37:55,708] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:38:31,636] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:39:42,971] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:39:46,433] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:40:15,271] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:40:59,270] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:41:38,219] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:44:10,696] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:44:34,158] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:44:41,541] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
+[2024-07-16 23:44:47,847] INFO _log() L224   * Restarting with stat - call_trace=/Users/conradocosta/Desktop/MVP - MICROSSERVIÇOS/Sprint1_MVP_backend/env_app/lib/python3.9/site-packages/werkzeug/_internal.py L224 
